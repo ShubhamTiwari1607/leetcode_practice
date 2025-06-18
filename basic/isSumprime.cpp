@@ -13,7 +13,7 @@ bool sum(string s){
     int res = 0;
     for(int i = 0; i < s.size(); i++){
        if(s[i] >= '0' && s[i] <= '9'){
-           res += s[i] - '0'; 
+           res += s[i] - '0'; // Convert character to integer
        }
     }
     return isPrime(res);
