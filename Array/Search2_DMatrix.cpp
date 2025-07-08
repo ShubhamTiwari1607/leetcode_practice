@@ -1,13 +1,15 @@
-#include<bits/stdc++.h>
+#include<bits/stdc++.h>// given the 2D array , each array is sorted in ascending order 
 using namespace std ;
 
 class Solution {
     public:
         bool searchMatrix(vector<vector<int>>& matrix, int target) {
             if (matrix.empty() || matrix[0].empty()) return false;
-            int rows = matrix.size();
-            int cols = matrix[0].size();
+
+            int rows = matrix.size(), cols = matrix[0].size();
+
             int left = 0, right = rows * cols - 1;
+
             while (left <= right) {
                 int mid = left + (right - left) / 2;
                 int midValue = matrix[mid / cols][mid % cols];

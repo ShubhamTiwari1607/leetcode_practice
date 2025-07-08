@@ -13,7 +13,7 @@ bool anagram(string s1,string s2){
 }
 int main(){
     string s1 ,s2 ;
-    s1 = "eatay" ;
+    s1 = "eat" ;
     s2 = "tea" ;
     if(anagram(s1,s2)){
         cout<<"it is a anagram" ;

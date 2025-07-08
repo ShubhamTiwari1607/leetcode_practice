@@ -18,3 +18,11 @@ int main(){
     for(int x : arr)cout<<x<<"\t";
     return 0;
 }
+
+// Yes, Bubble Sort is a stable sorting algorithm.
+// Why Bubble Sort is Stable:
+// Stability in sorting means that if two elements have the same value, their relative order in the input
+//  is preserved in the output.
+//bubble is inherently not adaptive
+// An adaptive algorithm adjusts its behavior based on the input data, performing fewer operations if the input
+//  is already partially sorted.
