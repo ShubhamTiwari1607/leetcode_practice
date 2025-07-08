@@ -8,43 +8,43 @@ class node{
     node* right;
 };
 
-void createTree(node* &hea, int val){
-    if(hea == nullptr){
+void createTree(node* &root, int val){
+    if(root == nullptr){
         node* newNode = new node ;
         newNode->data = val; 
         newNode->left = newNode->right =nullptr ;
-        hea = newNode ;
+        root = newNode ;
         return  ;
     }
-    if(hea->data < val){
-        createTree(hea->right,val);
+    if(root->data < val){
+        createTree(root->right,val);
     }
-    if(hea->data > val){
-       createTree(hea->left,val) ;
+    if(root->data > val){
+       createTree(root->left,val) ;
     }
 }
-int height(node* &hea){ 
-    if(hea == nullptr) return 0;
-    int lh = height(hea->left);
-    int rh = height(hea->right);
+int height(node* &root){ 
+    if(root == nullptr) return 0;
+    int lh = height(root->left);
+    int rh = height(root->right);
     return max(lh,rh)+1 ;
 }
- int countNodes(node* hea) {
-        if(hea == nullptr) return 0;
-        int lc = countNodes(hea->left);
-        int rc = countNodes(hea->right);
+ int countNodes(node* root) {
+        if(root == nullptr) return 0;
+        int lc = countNodes(root->left);
+        int rc = countNodes(root->right);
         return lc+rc+1;
     }
 
 int main(){
-    node *hea = nullptr ;
-    createTree(hea,3);
-    createTree(hea,9);
-    createTree(hea,20);
-    createTree(hea,15);
-    createTree(hea,7);
-    int h = height(hea);
+    node *root = nullptr ;
+    createTree(root,3);
+    createTree(root,9);
+    createTree(root,20);
+    createTree(root,15);
+    createTree(root,7);
+    int h = height(root);
     cout<<"the heigth of the binary tree is : "<<h <<endl;
-    cout<<"total nodes in the tree is : "<<countNodes(hea);
+    cout<<"total nodes in the tree is : "<<countNodes(root);
     return 0;
 }
